@@ -13,14 +13,22 @@
 <body>
     <div id="home" class="pg-content">
         <header id="header">
-            <nav>
-                <p>
-                    <a href="index.html">My Diary</a>
-                </p>
-            </nav>
+            <div class="navbar">
+               <p> <a href="index.html">My Diary</a><p>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="addEntry.html">Create Journel</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </header>
         <section>
-            <div>
+            <div class="clearfix">
                 <div class="home-col">
                     <!--msg column-->
                     <div id="home-msg">
@@ -37,11 +45,11 @@
                     <!--form column-->
                     <div class="form">
                         <div class="tab-group">
-                            <div class="tab active" onclick="switchTab(event,'signup')">
-                                <a href="#signup">Register</a>
-                            </div>
-                            <div class="tab" onclick="switchTab(event,'login')">
+                            <div class="tab active" onclick="switchTab(event,'login')">
                                 <a href="#login">Log In</a>
+                            </div>
+                            <div class="tab" onclick="switchTab(event,'signup')">
+                                <a href="#signup">Register</a>
                             </div>
                         </div>
 
@@ -116,7 +124,7 @@
         </section>
 
         <footer id="footer">
-            <div>Designed by Charles Kato </div>
+            <div class="center">Designed by Charles Kato </div>
         </footer>
     </div>
     <script src="js/main.js"></script>
