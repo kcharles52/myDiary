@@ -39,7 +39,7 @@ a:hover, a:focus {
   text-decoration:none;
 }
 
-.button {
+.button, #button {
     border: 0;
     outline: none;
     border-radius: 0;
@@ -47,13 +47,14 @@ a:hover, a:focus {
     font-size: 2rem;
     font-weight: 600;
     text-transform: uppercase;
+    text-align: center;
     letter-spacing: .1em;
     background:  #a75114;
     color: #ffffff;
 }
 
 .button:hover,
-.button:focus {
+.button:focus, #button:hover, #button:focus {
     background: #db8a5c;
 }
 
@@ -88,19 +89,19 @@ body > section {
   margin-bottom: 0;
   background-color:rgb(49, 31, 24, 0.8);
   padding: 10px 0;
-  padding-bottom: 0;
+  padding-bottom: 20px;
   overflow: auto;
 }
 
 .navbar p a{
   font-size: 40px;
-  line-height: 55px;
+  
   float:left;
   padding: 0 70px;
 }
 .navbar > nav{ 
   float:right;
-  
+  margin-top: -18px
 }
 
 .navbar>nav li{
@@ -118,16 +119,16 @@ body > section {
   border-radius: 3px;
   color: #fff;
   line-height: 24px;
-  display: block;
+  display: in-block;
 }
 
 .navbar nav li > a:hover{
-	background-color: #c52d2f;
+	background-color: #c46731;
   color: #fff;
 }
 
 .navbar nav li > .active > a,.navbar nav li > .active > a:hover,.navbar nav li > .active > a:focus{
-	background-color: #c52d2f;
+	background-color: #c46731;
   color: #fff;
 }
 
