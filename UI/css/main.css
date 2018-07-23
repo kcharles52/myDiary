@@ -5,6 +5,9 @@ body {
   color:#4e4e4e;
   line-height: 22px;
 }
+*,*:before,*:after {
+    box-sizing: border-box;
+}
 
 h1,h2{
   font-weight: 600;
@@ -26,12 +29,12 @@ h3{
 }
 
 a { 
-  color: #c52d2f;
+  color: #c46731;
   text-decoration:none;
 }
 
 a:hover, a:focus { 
-  color: #d43133;
+  color:#db8a5c;
   text-decoration:none;
 }
 
@@ -124,7 +127,20 @@ body > section {
 .home-col{
   width:40%;
   float: left;
-    
+  padding:40px 10px
+}
+
+#home-msg {
+  color: rgb(233, 209, 132);
+  padding: 30% 0% 0% 35%;
+}
+
+#home-msg li {
+  padding: 5%;
+  list-style: none;
+  margin: 3% 0%;
+  width: 60%;
+  border-radius: 10px;
 }
 .clearfix::after{
   content: "";
@@ -148,3 +164,124 @@ body > section {
     background: #db3615;
 }
 /*End of home page style*/
+
+/*Form styling*/
+
+.form {
+    background: rgb(37, 27, 26, 0.8);
+    padding: 40px;
+    max-width: 600px;
+    border-radius: 4px;
+}
+
+.dEntry {
+    max-width: 80%;
+    margin: auto;
+}
+
+.tab-group {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px 0;
+}
+
+.tab-group:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.tab-group div {
+    display: inline;
+}
+
+.tab-group div a {
+    display: block;
+    text-decoration: none;
+    padding: 15px;
+    background: rgba(160, 179, 176, 0.25);
+    color: #a0b3b0;
+    font-size: 20px;
+    float: left;
+    width: 50%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.tab-group div a:hover {
+    background: #db8a5c;
+    color: #ffffff;
+}
+
+.tab-group .active a {
+    background: #a75114;
+    color: #ffffff;
+}
+
+.tab-content>div:last-child {
+    display: none;
+}
+
+h1,
+h2 {
+    text-align: center;
+    color: #e9d18f;
+    font-weight: 300;
+    margin: 0 0 40px;
+}
+
+label {
+    position: absolute;
+    top: -22px;
+    color: #e9d18f;
+}
+
+label .req {
+    margin: 2px;
+    color: #db8a5c;
+}
+
+label.active {
+    left: 2px;
+    font-size: 14px;
+}
+
+label.active .req {
+    opacity: 0;
+}
+
+label.highlight {
+    color: #ffffff;
+}
+
+input,
+textarea {
+    font-size: 22px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 5px 10px;
+    background: none;
+    background-image: none;
+    border: 1px solid #db8a5c;
+    color: #ffffff;
+    border-radius: 0;
+}
+
+input:focus,
+textarea:focus {
+    outline: 0;
+    border-color: #b7a170;
+}
+
+textarea {
+    border: 2px solid #a0b3b0;
+    resize: vertical;
+}
+
+.field-wrap {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+/*End of form styling*/
