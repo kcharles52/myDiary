@@ -11,7 +11,7 @@ def register_user():
 
     #check if data has been passed into URL
     if not user_registration_data:
-        return jsonify({'message': 'All fields are required'}), 400
+        return jsonify({'Message': 'All fields are required'}), 400
 
     name = user_registration_data['name']
     email = user_registration_data['email']
