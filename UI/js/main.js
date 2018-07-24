@@ -20,9 +20,16 @@ function switchTab(evt, tabName) {
 
 }
 
+//get active tab content
+var activeTab = document.getElementsByClassName("activeTab")
+activeTab[0].style.display="block"
+
 function openTab(evt, tabName) {
     // Declare all variables
-    var i, tabcontent, tablinks;
+    var i, tabcontent, tablinks,currentTab;
+    activeTab = document.getElementsByClassName("activeTab")
+
+    activeTab[0].className = activeTab[0].className.replace("activeTab","tabcontent")
 
     // Get all elements with class="tabcontent" and hide them
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -32,11 +39,15 @@ function openTab(evt, tabName) {
 
     // Get all elements with class="tablinks" and remove the class "active"
     tablinks = document.getElementsByClassName("tablinks");
+
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
 
     // Show the current tab, and add an "active" class to the button that opened the tab
-    document.getElementById(tabName).style.display = "block";
+    currentTab = document.getElementById(tabName);
+    currentTab.style.display = "block";
+    currentTab.className = className.replace("tabcontent","activeTab");
     evt.currentTarget.className += " active";
+
 }
