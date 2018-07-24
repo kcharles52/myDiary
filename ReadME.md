@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/kcharles52/myDiary.svg?branch=develop)](https://travis-ci.org/kcharles52/myDiary) [![Coverage Status](https://coveralls.io/repos/github/kcharles52/myDiary/badge.svg?branch=develop)](https://coveralls.io/github/kcharles52/myDiary?branch=develop)
 # MyDiary
 This is an online application that helps users to record their memories.
 
