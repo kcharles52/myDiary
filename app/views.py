@@ -64,20 +64,20 @@ def create_entry():
     if not diary_entry_data:
         return jsonify({"message": "Enter data in all fields"}), 400
 
-    title = diary_entry_data.get('title')
+    diaryTitle = diary_entry_data.get('diaryTitle')
     date = diary_entry_data.get('date')
     diaryEntryBody = diary_entry_data.get('entryBody')
     entry_id = len(diaryEntries)+1
 
     # validate request data
-    if not title or title == "" or title == type(int):
-        return jsonify({'Message': 'title is required'}), 400
+    if not diaryTitle or diaryTitle == "" or diaryTitle == type(int):
+        return jsonify({'Message': 'Title is required'}), 400
     if not date or date == " ":
         return jsonify({'Message': 'date is required'}), 400
     if not diaryEntryBody or diaryEntryBody == "":
         return jsonify({'Message': 'Field required: Please write someting'}), 400
 
-    new_diary_entry = DiaryEntry(title, date, diaryEntryBody, entry_id)
+    new_diary_entry = DiaryEntry(diaryTitle, date, diaryEntryBody, entry_id)
     diaryEntries.append(new_diary_entry)
 
     return jsonify({'Message': 'You have successfully created your entry'}), 201
