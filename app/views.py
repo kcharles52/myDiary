@@ -1,6 +1,8 @@
 from flask import Flask, request, jsonify, make_response
 import json
 import re
+from .models import DiaryEntry, diaryEntries
+
 app = Flask(__name__)
 
 #register route
@@ -49,3 +51,33 @@ def login_user():
     if not password or password == " ":
         return jsonify({'Message': 'password  is required'}), 400
     return jsonify({"Message": "Welcome. You are logged in"}), 200
+
+#create entry route
+
+@app.route("/api/v1/entries", methods=["POST"])
+def create_entry():
+    """ Endpoint to get the diary entry data entered by the user """
+    # get request data
+    diary_entry_data = request.get_json()
+
+    #check if entry data is not empty
+    if not diary_entry_data:
+        return jsonify({"message": "Enter data in all fields"}), 400
+
+    title = diary_entry_data.get('title')
+    date = diary_entry_data.get('date')
+    diaryEntryBody = diary_entry_data.get('entryBody')
+    entry_id = len(diaryEntries)+1
+
+    # validate request data
+    if not title or title == "" or title == type(int):
+        return jsonify({'Message': 'title is required'}), 400
+    if not date or date == " ":
+        return jsonify({'Message': 'date is required'}), 400
+    if not diaryEntryBody or diaryEntryBody == "":
+        return jsonify({'Message': 'Field required: Please write someting'}), 400
+
+    new_diary_entry = DiaryEntry(title, date, diaryEntryBody, entry_id)
+    diaryEntries.append(new_diary_entry)
+
+    return jsonify({'Message': 'You have successfully created your entry'}), 201
