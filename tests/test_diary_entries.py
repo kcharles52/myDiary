@@ -71,3 +71,19 @@ class EntriesTest(BaseTestCaseDiaryEntry):
             '/api/v1/entries/3', content_type='application/json')
         self.assertEqual(response.status_code, 404)
         self.assertIn('Diary Entry Not Found',str(response.data))
+
+        #tests for modifying entry
+    def test_modify_empty_entry(self):
+        """ Tests whether a user can modify when there are no entries """
+        response = self.test_client.put('/api/v1/entries/1', data=json.dumps(self.diary_entry_data), content_type='application/json')
+        self.assertEqual(response.status_code, 404)
+        self.assertIn("You have no entries to modify", str(response.data))
+
+    def test_modify_entry(self):
+        """ Tests whether a user can modify an entry successfully """
+        response = self.test_client.post(
+            '/api/v1/entries', data=json.dumps(self.diary_entry_data), content_type='application/json')
+        response = self.test_client.put(
+            '/api/v1/entries/1', data=json.dumps(self.diary_entry_data), content_type='application/json')
+        self.assertEqual(response.status_code, 201)
+        self.assertIn("You successfully modified your entry", str(response.data))
