@@ -26,9 +26,9 @@ class BaseTestCaseDiaryEntry(unittest.TestCase):
     def setUp(self):
         self.test_client = app.test_client()
         self.diary_entry_data={
-            "title": "wedding Dm",
+            "diaryTitle": "wedding Dm",
             "date": "1/2/2017",
-            "diaryBody": "This some message for the entry in the diary",
+            "diaryEntryBody": "This some message for the entry in the diary",
             "entry_id": "1"
         }
 
