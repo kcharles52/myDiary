@@ -66,7 +66,7 @@ def create_entry():
 
     diaryTitle = str(diary_entry_data.get('diaryTitle')).strip()
     date = str(diary_entry_data.get('date')).strip()
-    diaryEntryBody = diary_entry_data.get('entryBody')
+    diaryEntryBody = diary_entry_data.get('diaryEntryBody')
     entry_id = len(diaryEntries)+1
 
     # validate request data
