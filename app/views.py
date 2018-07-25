@@ -106,3 +106,25 @@ def get_single_entry(entry_id):
         if entry.entry_id == entry_id:
             return jsonify({'entry': entry.__dict__}), 200
     return jsonify({'Message': 'Diary Entry Not Found'}), 404
+
+#route for modifying an entry
+@app.route("/api/v1/entries/<int:entry_id>", methods=['PUT'])
+def modify_entry(entry_id):
+    """ Endpoint to modify a given entry"""
+    if len(diaryEntries) < 1:
+        return jsonify({"Message": "You have no entries to modify"}), 404
+
+    if len(diaryEntries) >= 1:
+        entry_data = request.get_json()
+        for entry in diaryEntries:
+            if entry.entry_id == int(entry_id):
+                diaryTitle = entry_data.get('diaryTitle')
+                date = entry_data.get('date')
+                diaryEntryBody = entry_data.get('diaryEntryBody')
+
+                modified_entry = DiaryEntry(diaryTitle, date, diaryEntryBody, entry_id)
+                diaryEntries.insert(entry_id, modified_entry)
+            return jsonify({
+                "entry": entry.__dict__,
+                "Message": "You successfully modified your entry"
+            }), 201
