@@ -81,3 +81,17 @@ def create_entry():
     diaryEntries.append(new_diary_entry)
 
     return jsonify({'Message': 'You have successfully created your entry'}), 201
+
+#route for fetiching all diary entries
+@app.route("/api/v1/entries", methods=["GET"])
+def fetch_entries():
+    if len(diaryEntries) < 1:
+        return jsonify({"Message": "You have no entries"}), 404
+
+    if len(diaryEntries) >= 1:
+        return jsonify({
+            "Message": "Successfully fetched entries",
+            "entriess": [
+                entry.__dict__ for entry in diaryEntries
+            ]
+        }), 200
