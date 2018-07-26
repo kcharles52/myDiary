@@ -72,6 +72,14 @@ class EntriesTest(BaseTestCaseDiaryEntry):
         self.assertEqual(response.status_code, 404)
         self.assertIn('Diary Entry Not Found',str(response.data))
 
+        #fetch-single-entry
+    def test_get_single_entry_no_diary(self):
+        """ Tests  whether a user can retrieve an entry with an id when there are no entries """
+        response = self.test_client.get(
+            '/api/v1/entries/1', content_type='application/json')
+        self.assertEqual(response.status_code, 404)
+        self.assertIn('You have no entries', str(response.data))
+
         #tests for modifying entry
     def test_modify_empty_entry(self):
         """ Tests whether a user can modify when there are no entries """
@@ -87,3 +95,4 @@ class EntriesTest(BaseTestCaseDiaryEntry):
             '/api/v1/entries/1', data=json.dumps(self.diary_entry_data), content_type='application/json')
         self.assertEqual(response.status_code, 201)
         self.assertIn("You successfully modified your entry", str(response.data))
+
