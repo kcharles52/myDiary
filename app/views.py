@@ -95,3 +95,14 @@ def fetch_entries():
                 entry.__dict__ for entry in diaryEntries
             ]
         }), 200
+
+#route for fetching single entry by id
+@app.route('/api/v1/entries/<int:entry_id>', methods=['GET'])
+def get_single_entry(entry_id):
+    """ Endpoint to fetch a single entry """
+    if len(diaryEntries) < 1:
+        return jsonify({ "Message": "You have no entries"}), 404
+    for entry in diaryEntries:
+        if entry.entry_id == entry_id:
+            return jsonify({'entry': entry.__dict__}), 200
+    return jsonify({'Message': 'Diary Entry Not Found'}), 404

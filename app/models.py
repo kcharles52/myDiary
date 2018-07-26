@@ -8,6 +8,7 @@ class DiaryEntry:
         self.diaryTitle = diaryTitle
         self.diaryEntryBody = diaryEntryBody
         self.date = date
+        self.entry_id = entry_id
 
     def __repr__(self):
         return repr(self.__dict__)
