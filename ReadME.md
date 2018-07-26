@@ -2,11 +2,27 @@
 # MyDiary
 This is an online application that helps users to record their memories.
 
+
 ## Prerequisites
 * Text editor
 * Browser 
+* Python/Flask framework
 
-## Features(UI)
+## How to setup the project
+* Create a virtual environment using the following command
+  > python3 -m venv myenv
+* Activate the virtual environment 
+  > source myenv/bin/activate
+* Install dependencies in the virtual environment
+  > pip install -r requirements.txt
+
+##  Run the application
+* Run `python3 run.py` on command prompt
+* View the api on http://127.0.0.1:5000/api/v1/register
+* You can test the Endpoints with PostMan
+
+## Features
+### User interface
 * signup page
 * signin page
 * Diary entries
@@ -15,12 +31,29 @@ This is an online application that helps users to record their memories.
 * Profile page
 * Dashboard page
 
-## BUilt with
+Preview on <a href="https://kcharles52.github.io/myDiary/UI/">Github pages</a>
+
+## Endpoints 
+HTTP Method|End point |Action
+-----------|----------|--------------
+POST | /api/v1/signup | Register a user
+POST | /api/v1/login | Login a user
+GET| /api/v1/entries   | Fetch all entries
+GET | /api/v1/entry/<entry_Id> | Fetch a single entry
+POST | /api/v1/entry | Create an entry
+PUT | /api/v1/entries/<entry_id>/ | Modify entry
+
+##  Technologies
 * HTML
 * CSS
 * javascript
+* Python 3.6
 
-## Authors
+## Testing frame
+* nosetests
+* pytest
+
+
+## Author
 [Kato Charles](https://github.com/kcharles52)
 
-Preview on <a href="https://kcharles52.github.io/myDiary/UI/">Github pages</a>
