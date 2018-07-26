@@ -10,6 +10,11 @@ body {
     box-sizing: border-box;
 }
 
+.bg{
+    background-color: #a75110;
+    color: #fff !important;
+}
+
 h1,h2{
   font-weight: 600;
   font-family: 'Open Sans', sans-serif;
@@ -77,6 +82,10 @@ a:hover, a:focus {
 
 body > section {
   padding: 70px 0;
+}
+section {
+    min-height: 500px;
+    padding: 0 70px;
 }
 
 .center {
@@ -189,11 +198,6 @@ body > section {
     max-width: 500px;
     border-radius: 4px;
     margin-left: 100px
-}
-
-.dEntry {
-    max-width: 80%;
-    margin: auto;
 }
 
 .tab-group {
@@ -373,11 +377,14 @@ textarea {
 /*End of profile style*/
 
  /* Style entries page */
-
+#EntriesPage h1, h2, h3 {
+    color: #fff;
+}
  .tab {
      overflow: hidden;
+     color:#fff;
      /*! border: 1px solid #ccc; */
-     background-color: #f1f1f1;
+     background-color: #853700;
  }
 
  .tab button {
@@ -388,6 +395,7 @@ textarea {
      cursor: pointer;
      padding: 14px 16px;
      transition: 0.3s;
+     color: #fff;
  }
 
  .tab button:hover {
@@ -406,3 +414,46 @@ textarea {
      border: 1px solid #ccc;
      border-top: none;
  }
+
+ /*diary entries page*/
+
+ .d-table {
+     padding: 20px;
+     background-image: url("../img/dEntryBg.jpg");
+     background-repeat: no-repeat;
+ }
+
+ .d-table table {
+     padding: 2%;
+     background-color: rgb(50, 50, 50, 0.9);
+     color: white;
+ }
+
+ table {
+     border-collapse: collapse;
+ }
+
+ td,
+ th {
+     border: 1px solid #fff;
+     padding: 15px 20px;
+ }
+
+ .action a {
+     padding: 5px 10px;
+     border: 2px solid;
+     margin-right: 3px;
+ }
+
+ .dEntry {
+     max-width: 80%;
+     margin: auto;
+ }
+ 
+.diaryEntry {
+    width: 700px;
+    margin: auto;
+    background-color: rgb(20, 20, 30, 0.9);
+    padding: 40px;
+    color: gray;
+}
