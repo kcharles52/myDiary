@@ -10,16 +10,25 @@ This is an online application that helps users to record their memories.
 
 ## How to setup the project
 * Create a virtual environment using the following command
-  > python3 -m venv myenv
+  > `$python3 -m venv myenv`
 * Activate the virtual environment 
-  > source myenv/bin/activate
+  > `$source myenv/bin/activate`
 * Install dependencies in the virtual environment
-  > pip install -r requirements.txt
+  > `$pip install -r requirements.txt`
 
 ##  Run the application
-* Run `python3 run.py` on command prompt
-* View the api on http://127.0.0.1:5000/api/v1/register
+* Use this command to run the application
+  > `$python3 run.py`
+* View a sample endpoint at http://127.0.0.1:5000/api/v1/register
 * You can test the Endpoints with PostMan
+
+## Testing frame works
+* nosetests
+* pytest
+## How to run the tests
+* use the following command to run tests
+  > `$nosetests --with-coverage`
+
 
 ## Features
 ### User interface
@@ -48,11 +57,6 @@ PUT | /api/v1/entries/<entry_id>/ | Modify entry
 * CSS
 * javascript
 * Python 3.6
-
-## Testing frame
-* nosetests
-* pytest
-
 
 ## Author
 [Kato Charles](https://github.com/kcharles52)
