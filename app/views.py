@@ -64,7 +64,7 @@ def create_entry():
     if not diary_entry_data:
         return jsonify({"message": "Enter data in all fields"}), 400
 
-    diaryTitle = str(diary_entry_data.get('diaryTitle')).strip()
+    diaryTitle = diary_entry_data.get('diaryTitle')
     date = str(diary_entry_data.get('date')).strip()
     diaryEntryBody = diary_entry_data.get('diaryEntryBody')
     entry_id = len(diaryEntries)+1
@@ -91,7 +91,7 @@ def fetch_entries():
     if len(diaryEntries) >= 1:
         return jsonify({
             "Message": "Successfully fetched entries",
-            "entriess": [
+            "entries": [
                 entry.__dict__ for entry in diaryEntries
             ]
         }), 200

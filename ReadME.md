@@ -45,8 +45,8 @@ Preview on <a href="https://kcharles52.github.io/myDiary/UI/">Github pages</a>
 ## Endpoints 
 HTTP Method|End point |Action
 -----------|----------|--------------
-POST | /api/v1/signup | Register a user
-POST | /api/v1/login | Login a user
+POST | /api/v1/users | Register a user
+POST | /api/v1/user | Login a user
 GET| /api/v1/entries   | Fetch all entries
 GET | /api/v1/entry/<entry_Id> | Fetch a single entry
 POST | /api/v1/entry | Create an entry
